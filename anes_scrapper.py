@@ -10,6 +10,8 @@ def scrapper(myline,mystring):
 	mytxt = re.search(myregex,myline)
 	mysaveddata=""
 	if (mytxt):
+		#Replace the "non-breaking hyphen" with "-" - if it is present in the value string
+		#mytxt.group(1).replace("\xe2\x80\x91","-")
 		#If we have a match - create the row for CSV file
 		mysaveddata = mystring+","+mytxt.group(3)+","+mytxt.group(1)+","+mytxt.group(2)+"\n"
 		myWfile.write(mysaveddata)
@@ -32,7 +34,9 @@ else:
 		#Run each line through the list of VitalSigns provided by the user
 		for eachVS in sys.argv:
 			scrapper(eachline,eachVS)
-
+	#close the files when the job is done
+	myRfile.close()
+	myWfile.close()
 
 
 	
