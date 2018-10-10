@@ -1,8 +1,12 @@
 #!/usr/bin/python
-#10/9/2018 KV v0.2
+#10/10/2018 KV v0.3
 #To do:
 #1) Automate file name for csv , check for existing file name etc.
-#2) Clean up encoding
+#2) Clean up encoding - solved by importing data as text/unicode:65001  in Excel
+#3) User sends http request - gets a webpage with a file upload
+#4 On uploading the file - user is asked to select the vital signs to extract from a list of vital signs. Once the user hits submit - python script is run with uploaded file and user selected parameters and then the results are returned to the user in a .csv file format.
+
+
 import sys #sys.argv[0] is file name arg1 = sys.argv[1]
 import re
 def scrapper(myline,mystring):
@@ -37,7 +41,4 @@ else:
 	#close the files when the job is done
 	myRfile.close()
 	myWfile.close()
-
-
-	
 
