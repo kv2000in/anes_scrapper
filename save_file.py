@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 #10/10/2018 V 0.3 KV
+# Copyright reserved kv2000in@gmail.com
 # To do : - 1) Check the type of file being uploaded - Remove  malicious files
 #2) Add more vital signs on the html page.
 #3) Separate SBP/DBP from NIBP and ABP
+#4) Delete uploaded files once the scraping has finished
 
 import cgi, os, sys
 import cgitb
