@@ -9,12 +9,51 @@
 <!--        <link rel="stylesheet" href="main.css">-->
     </head>
     <body>
-<form enctype="multipart/form-data" action="save_file.py" method="post">
+
+<form enctype="multipart/form-data" action="/cgi-bin/save_file.py" method="post">
 <p>File: <input type="file" name="file"></p>
-HR<input type="checkbox" name="color" value="HR">
-NIBP<input type="checkbox" name="color" value="NIBP">
+    <ul>
+<li>HR<input type="checkbox" name="VitalSign" value="HR" checked></li>
+<li>Pulse Rate (bpm)<input type="checkbox" name="VitalSign" value="Pulse Rate (bpm)"></li>
+<li>NIBP<input type="checkbox" name="VitalSign" value="NIBP"></li>
+<li>NIBP (Mean)<input type="checkbox" name="VitalSign" value="NIBP (Mean)"></li>
+<li>ABP<input type="checkbox" name="VitalSign" value="ABP"></li>
+<li>ABP MEAN<input type="checkbox" name="VitalSign" value="ABP MEAN"></li>
+<li>SpO2<input type="checkbox" name="VitalSign" value="SpO2"></li>
+<li>ETCO2<input type="checkbox" name="VitalSign" value="ETCO2"></li>
+</ul><ul>
+<li>Respiratory Rate (spontaneous)<input type="checkbox" name="VitalSign" value="Respiratory Rate (spontaneous)"></li>
+<li>PAP-M<input type="checkbox" name="VitalSign" value="PAP-M"></li>
+<li>Art Mean<input type="checkbox" name="VitalSign" value="Art Mean"></li>
+<li>CVP<input type="checkbox" name="VitalSign" value="CVP"></li>
+<li>PIP<input type="checkbox" name="VitalSign" value="PIP"></li>
+<li>PEEP<input type="checkbox" name="VitalSign" value="PEEP"></li>
+<li>Mean Airway Pressure<input type="checkbox" name="VitalSign" value="Mean Airway Pressure"></li>
+<li>EXP TIDAL VOLUME (mL)<input type="checkbox" name="VitalSign" value="EXP TIDAL VOLUME (mL)"></li>
+        </ul>
 <p><input type="submit" value="Upload"></p>
 </form>
+        <h1><strong>How to use this tool?</strong></h1>
+        <ul><b><u>EPIC</u></b>
+            <li>Open "Physiologic Monitoring Data from Anesthesia Record Report (from chart review</li>
+            <li>Select all (Ctrl + A)</li>
+            <li>Copy (Ctrl + C)</li>
+            <li>Open a blank/new text document in notepad</li>
+            <li>paste (ctrl+v) copied data into the text file</li>
+            <li>Save file as whatever-filename.txt</li>
+            </ul>
+        <ul> <b><u>Web Portion</u></b>
+            <li>Choose whatever-filename.txt</li>
+        <li>Check the boxes of the vital signs you need extracted</li>
+        <li>Upload and wait</li>
+        <li>Depending on the "size" of the request- wait time may vary</li>
+        <li>You will either be prompted to "save as" or if using chrome a file will just get downloaded</li>
+        <li>File name will whatever-filename.txt.csv</li></ul>
+        <ul> <b><u>Excel or anyother spreadsheet</u></b>
+        <li>Open whatever-filename.txt.csv directly into Excel </li>
+        <li>Or if having encoding issues - Open Excel and go to Import data from Text and then import as Unicode UTF-8</li>
+        <li>Sort or Filter your extracted vital sign values, units and timestamps and use it in your analysis</li>
+        </ul>
 </body></html>
 <!--
 
